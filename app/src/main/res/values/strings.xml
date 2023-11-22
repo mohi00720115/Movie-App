@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Movie App</string>
+    <string name="update">Update</string>
+    <string name="movie_description_text">Movie Description Text</string>
+</resources>
