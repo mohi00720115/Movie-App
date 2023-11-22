@@ -5,10 +5,13 @@ import com.example.movieapp.domain.usecases.GetMoviesUseCase
 import com.example.movieapp.domain.usecases.UpdateMoviesUseCase
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-class UseCaseModule {
+@InstallIn(SingletonComponent::class)
+object UseCaseModule {
 
     @Singleton
     @Provides

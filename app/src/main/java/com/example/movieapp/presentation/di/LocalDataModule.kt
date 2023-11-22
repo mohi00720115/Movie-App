@@ -5,10 +5,13 @@ import com.example.movieapp.data.datasources.IMovieLocalDataSource
 import com.example.movieapp.data.db.IMovieDao
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-class LocalDataModule () {
+@InstallIn(SingletonComponent::class)
+object LocalDataModule {
 
     @Singleton
     @Provides

@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="#FFFFA7"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="30dp">
+        app:cardBackgroundColor="#E0F2F1"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -41,6 +41,7 @@
                 android:layout_marginEnd="16dp"
                 android:textSize="22sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Movie Title" />
@@ -49,16 +50,15 @@
                 android:id="@+id/descriptionTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="16dp"
+                android:layout_margin="12dp"
                 android:maxLines="3"
                 android:textSize="12sp"
                 android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
                 app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+                app:layout_constraintVertical_bias="0.17"
                 tools:text="@string/movie_description_text" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

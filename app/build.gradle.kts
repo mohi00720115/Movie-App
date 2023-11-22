@@ -4,6 +4,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("kotlin-kapt")
     id("androidx.navigation.safeargs.kotlin")
+    id("dagger.hilt.android.plugin")
 
 }
 
@@ -72,8 +73,8 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     // Dagger
-    implementation("com.google.dagger:dagger:2.48.1")
-    ksp("com.google.dagger:dagger-compiler:2.48.1")
+//    implementation("com.google.dagger:dagger:2.48.1")
+//    ksp("com.google.dagger:dagger-compiler:2.48.1")
     // retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
@@ -82,5 +83,8 @@ dependencies {
     // Glide
     implementation("com.github.bumptech.glide:glide:5.0.0-rc01")
     ksp("com.github.bumptech.glide:compiler:5.0.0-rc01")
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.48.1")
+    ksp("com.google.dagger:hilt-compiler:2.48.1")
 
 }

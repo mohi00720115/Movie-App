@@ -2,8 +2,9 @@ package com.example.movieapp.data.datasourcelmpl
 
 import com.example.movieapp.data.datasources.IMovieCacheDataSource
 import com.example.movieapp.data.model.Movie
+import javax.inject.Inject
 
-class IMovieCacheDataSourceImpl : IMovieCacheDataSource {
+class IMovieCacheDataSourceImpl @Inject constructor() : IMovieCacheDataSource {
 
     private var movieList = ArrayList<Movie>()
     override suspend fun getMoviesFromCache(): List<Movie> {

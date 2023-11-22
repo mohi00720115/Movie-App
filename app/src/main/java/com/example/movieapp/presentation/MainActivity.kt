@@ -6,36 +6,25 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.Observable
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.example.movieapp.R
 import com.example.movieapp.databinding.ActivityMainBinding
-import com.example.movieapp.presentation.di.Injector
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
-    private lateinit var viewModelMovie: MyViewModel
+    private val viewModelMovie: MyViewModel by viewModels()
     private lateinit var adapter: MovieAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
-        (application as Injector).createMovieSubComponent().inject(this)
-
-        viewModelMovie = ViewModelProvider(this, viewModelFactory)[MyViewModel::class.java]
-
         initRecyclerView()
 
     }

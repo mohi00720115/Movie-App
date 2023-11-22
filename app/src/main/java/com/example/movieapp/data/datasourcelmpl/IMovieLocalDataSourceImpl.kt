@@ -6,8 +6,9 @@ import com.example.movieapp.data.model.Movie
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class IMovieLocalDataSourceImpl(
+class IMovieLocalDataSourceImpl @Inject constructor(
     private val IMovieDao : IMovieDao
 ) : IMovieLocalDataSource {
     override suspend fun getMoviesFromDB(): List<Movie> {

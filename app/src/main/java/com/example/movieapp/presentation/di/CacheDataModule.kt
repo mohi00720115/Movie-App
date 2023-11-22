@@ -4,10 +4,13 @@ import com.example.movieapp.data.datasourcelmpl.IMovieCacheDataSourceImpl
 import com.example.movieapp.data.datasources.IMovieCacheDataSource
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-class CacheDataModule {
+@InstallIn(SingletonComponent::class)
+object CacheDataModule {
 
     @Singleton
     @Provides
